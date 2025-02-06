@@ -12,15 +12,16 @@ public class Main {
             System.out.println();
             if (response.equals("y")) {
                 accountNo = bank.login();
-                if (accountNo != -1)
+                if (accountNo != -1) {
                     loggedIn = true;
+                }
             }
             else if (response.equals("n"))
                 bank.addAccount();
             else if (response.equals("quit"))
                 quitting = true;
         }
-/*
+
         while (!quitting) {
             System.out.println(
                     "Press 1 to check your balance\nPress 2 to deposit money\nPress 3 to withdraw money\nPress 4 to exit:\n");
@@ -47,6 +48,5 @@ public class Main {
     public static void main(String[] args) {
         new Main();
 
- */
     }
 }
