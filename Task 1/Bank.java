@@ -34,15 +34,32 @@ public class Bank {
     public void deposit(int number) {
     /*This method should ask the user how much money they want to deposit into their account, and correctly update the 
 	balance of their account*/
+        System.out.println("Enter the amount to deposit: \n");
         String depositString=Console.readLine();
         Integer deposit=Integer.parseInt(depositString);
         Account account=accounts.get(number);
-        account.setBalance(account.getBalance()+deposit);
+        if(deposit<0){
+            System.out.println("Deposit amount must be positive");
+        }
+        else {
+            account.setBalance(account.getBalance() + deposit);
+        }
     }
 
     public void withdraw(int number) {
     /*This method should ask the user how much money they want to withdraw from their account, and correctly update 
 	the balance of their account*/
+        System.out.println("How much would you like to withdraw?");
+        String input=Console.readLine();
+        Integer withdraw=Integer.parseInt(input);
+        Account account=accounts.get(number);
+        if(account.getBalance()<withdraw) {
+            System.out.println("Your balance is too low to withdraw that amount");
+        } else if (withdraw<0) {
+            System.out.println("Withdraw amount must be positive");
+        } else {
+            account.setBalance(account.getBalance() - withdraw);
+        }
     }
 
     public void checkBalance(int number) {
