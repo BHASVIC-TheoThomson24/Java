@@ -1,0 +1,8 @@
+1) Polymorphism is when the same method can be used in different ways depending on the context
+
+2)a)Object is the superclass, and Number is the subclass
+b)type(), it is declared again in the Number subclass, with a different implementation
+c)add(), it has multiple implementations with different amounts of parameters
+d)add(), it does not begin its declaration with final, and it can be overridden
+
+3) A method should be declared as virtual if it needs to be overridden, as it has different implementations in different subclasses.

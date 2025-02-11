@@ -5,24 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3a96e01b-090e-404d-b98d-46cc68c30b4a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Account.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Bank.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Console.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Downloads.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/Downloads/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/Downloads/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/Downloads/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/Downloads/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/Downloads/Account.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/Downloads/Bank.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/Downloads/Console.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/Downloads/Downloads.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/Downloads/Main.class" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Task 4/Console.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Task 4/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Task 4/Shape.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Task 4/StringToNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task 3/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task 3/Animal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task 3/Bat.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task 3/Bat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task 3/Gorilla.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task 3/Gorilla.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task 3/Mammal.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task 3/Mammal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task 3/Otter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task 3/Otter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task 3/Reptile.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task 3/Reptile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task 3/Snake.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task 3/Snake.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task 3/Tortoise.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task 3/Tortoise.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task 3/Turtle.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task 3/Turtle.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +44,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/theo.thomson24/Downloads/Java/Task 2",
+    "last_opened_file_path": "C:/Users/theo.thomson24/Downloads/Java/Task 1",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -76,6 +72,7 @@
       <workItem from="1738855889411" duration="864000" />
       <workItem from="1739176372429" duration="618000" />
       <workItem from="1739177172139" duration="53000" />
+      <workItem from="1739288087556" duration="337000" />
     </task>
     <servers />
   </component>

@@ -1,0 +1,12 @@
+1) Encapsulation is the concept that each class should be self contained, and only interact with other classes through public methods such as setters and getters
+
+2)A private attribute/method can only be accessed from within the class where it is declared, whereas a public attribute/method can be accessed from any class
+
+3) An attribute may be made private so that it can't be accidentally edited by a method in a different class
+
+4) accessor: A method that will return a specific attribute from a class
+mutator: A method that will change the value of a specific attribute in a class
+
+5) Accessors and mutators should be used when a private attribute needs to be accessed by another class
+
+6) If an attribute needs to be accessed and edited from many classes, and does not need to be hidden, it may be easier to make it public than to use accessors and mutators

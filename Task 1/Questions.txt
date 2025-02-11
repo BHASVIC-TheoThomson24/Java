@@ -1,0 +1,48 @@
+1)A set of conditions and ideals for a style of programming
+
+2)Procedural programming focuses on breaking down a task into smaller subroutines, but object oriented programming focuses on breaking down a task into objects to model the problem
+
+3)An object is an instance of a class, whereas a class is the general template for an object, and defines its methods and attributes
+
+4)A static method may be used when a class will not be instantiated into multiple objects, such as the Main class
+
+5)
+Class Clock
+	int hour
+	int minute
+	int second	
+
+	public Clock()
+		hour=0
+		minute=0
+		second=0
+	endmethod
+
+	public displayTime()
+		print("The time is"+ hour + ":"+minute+":" + second)
+	endmethod
+
+	public setTime(int hourinput, int minuteinput, int secondinput)
+		hour=hourinput
+		minute=minuteinput
+		second=secondinput
+	endmethod
+
+	public updateTime()
+		second++
+		if(second=60)
+			second=0
+			minute++
+			if(minute=60)
+				minute=0
+				hour++
+				if(hour=24)
+					hour=0
+				endif
+			endif
+		endif
+	endmethod
+
+endclass
+
+

@@ -5,7 +5,9 @@ public abstract class Animal {
     abstract void move();
     abstract void eat();
     abstract void birth();
-    abstract void hibernate();
+    protected void hibernate(){
+            System.out.println("This animal hibernates");
+    }
     public void getInfo() {
         System.out.println(type+":");
         if (this.coldBlooded)
@@ -25,7 +27,9 @@ public abstract class Animal {
         this.move();
         this.eat();
         this.birth();
-        this.hibernate();
+        if(this.hibernates) {
+            this.hibernate();
+        }
         System.out.println();
     }
 }

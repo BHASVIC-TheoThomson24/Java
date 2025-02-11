@@ -1,0 +1,18 @@
+1) Inheritance is when a subclass shares all the methods and attributes from its superclass, and is able to use them itself, so that they don't need to be rewritten
+
+2) 
+Bat->Mammal -> Animal
+	^
+	|
+     Gorilla
+3)
+a) Parent:Guitar
+     Child: ElectricGuitar
+b)Attributes:noOfStrings
+Methods:holdFret(),strum()
+
+4)When a super method is called, a subclass will run the method that it has inherited from its superclass
+
+5) If a subclass inherits 2 methods with the same name from different classes, it will be ambiguous which one it should use when called.
+
+6) An abstract method is a method which exists for all subclasses of a class, but is different for different ones. e.g. All subclasses of Animal would have a move() method, but they would all be coded differently. They are implemented by declaring a method with an empty body
