@@ -8,7 +8,7 @@ public abstract class Animal {
     protected void hibernate(){
             System.out.println("This animal hibernates");
     }
-    public void getInfo() {
+    protected void getInfo() {
         System.out.println(type+":");
         if (this.coldBlooded)
             System.out.println("This animal is cold-blooded");

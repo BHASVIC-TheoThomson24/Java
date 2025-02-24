@@ -30,9 +30,6 @@ public class Room {
         }
         clean=false;
     }
-    void checkOut(Customer occupant) {
-        occupants.remove(occupant);
-    }
 
     void removeOccupant(Customer occupant) {
         if(occupants.contains(occupant)) {

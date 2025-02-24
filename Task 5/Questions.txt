@@ -1,0 +1,9 @@
+1) UML(Unified modelling language) class diagrams are used to display the methods and attributes of a class, alongside their access level. This allows programmers to plan how classes will work, without considering the details of each method.
+
+2)Both composition and aggregation involve a superclass being formed from multiple component objects
+
+3)In composition, a subclass can only exist as a component of the superclass, whereas in aggregation, the subclasses can be objects on their own, without a superclass.
+
+4)a)Class B is a subclass of class A ; Class A is the superclass of B
+b)Class A is a composite class, and class C is the component class
+c) Class D is the aggregation class, and class B is the component class
