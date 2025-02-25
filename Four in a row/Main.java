@@ -73,11 +73,12 @@ public class Main {
                 System.out.print("Keep adding players (y/n)?:");
                 addMore = Console.readLine().toLowerCase();
                 System.out.println();
-                if (!addMore.equals("y") && !addMore.equals("yes"))
+                if (!addMore.equals("y") && !addMore.equals("yes")) {
                     allPlayersAdded = true;
-                else if (players.size() == 4)
-                    allPlayersAdded = true;
+                }
             }
+            else if (players.size() == 4)
+                allPlayersAdded = true;
         }
 
         System.out.println("This game has " + players.size() + " players:");

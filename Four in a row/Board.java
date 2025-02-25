@@ -39,6 +39,9 @@ public class Board {
         else if(checkHorizontal()!=null) {
             winner = checkHorizontal();
         }
+        else if(checkDiagonal()!=null) {
+            winner = checkDiagonal();
+        }
         return winner;
     }
     private Player checkHorizontal(){
@@ -93,14 +96,73 @@ public class Board {
     }
     private Player checkDiagonal(){
         Player winner = null;
-        int column=0;
-        int row=0;
-        Column c;
-        for(int i=0;i< height-3 ;i++){
-            for(int j=0;j<width-3 ;j++){
-                
-            }
+        if(checkDiagonalUpwards()!=null){
+            winner = checkDiagonalUpwards();
+        } else if (checkDiagonalDownwards() !=null) {
+            winner=checkDiagonalDownwards();
         }
+        return winner;
+    }
+    private Player checkDiagonalDownwards(){
+        Player winner = null;
+        int column=0;
+        Column c;
+        int length=0;
+        int playerNum=0;
+        while(winner == null && column<width-3){
+            //iterate through the possible starting points in each column
+            for(int i=3;i< height ;i++){
+                //iterate through diagonal spaces
+                for(int j=0; j<4;j++){
+                    c=board.get(column+j);
+                    int num=c.getToken(i-j);
+                    if(num == playerNum){
+                        length++;
+                    }
+                    else{
+                        length=1;
+                        playerNum=num;
+                    }
+                    if(length==4 && playerNum!=0){
+                        winner=Main.getPlayers().get(playerNum-1);
+                    }
+
+                }
+            }
+            column++;
+        }
+
+        return winner;
+    }
+    private Player checkDiagonalUpwards(){
+        Player winner = null;
+        int column=0;
+        Column c;
+        int length=0;
+        int playerNum=0;
+        while(winner == null && column<width-3){
+            //iterate through the possible starting points in each column
+            for(int i=0;i< height-3 ;i++){
+                //iterate through diagonal spaces
+                for(int j=0; j<4;j++){
+                    c=board.get(column+j);
+                    int num=c.getToken(i+j);
+                    if(num == playerNum){
+                        length++;
+                    }
+                    else{
+                        length=1;
+                        playerNum=num;
+                    }
+                    if(length==4 && playerNum!=0){
+                        winner=Main.getPlayers().get(playerNum-1);
+                    }
+
+                }
+            }
+            column++;
+        }
+
         return winner;
     }
 
