@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Player {
     int num=0;
     int width=0;
@@ -7,30 +9,38 @@ public class Player {
         num=numInput;
         width=widthInput;
         height=heightInput;
-        board=new Board(this,width,height);
+        board=new Board(num,width,height);
     }
     public int getNumber() {
         return num;
     }
     public void takeShot(Board board) {
         int column=0;
-        while(column==0){
-            try{
-                column=Integer.parseInt(Console.readLine());
-            }
-            catch(Exception e){
-                System.out.println("Invalid column, please try again:");
-            }
-        }
         char row=0;
-        while(row==0) {
-            try {
-                row = Console.readLine().charAt(0);
-            } catch (Exception e) {
-                System.out.println("Invalid column, please try again:");
+        if(num==1) {
+            while (column < 1 || column > width) {
+                try {
+                    System.out.println("Please enter a column");
+                    column = Integer.parseInt(Console.readLine());
+                } catch (Exception e) {
+                    System.out.println("Invalid column, please try again:");
+                }
+            }
+            while (row < 97 || row > 97 + height - 1) {
+                try {
+                    System.out.println("Please enter a row");
+                    row = Console.readLine().charAt(0);
+                } catch (Exception e) {
+                    System.out.println("Invalid column, please try again:");
+                }
             }
         }
-        row=Character.toUpperCase(row);
+        else{
+            Random rand=new Random();
+            column=rand.nextInt(width)+1;
+            row=(char) (rand.nextInt(height)+97);
+        }
+        row=Character.toLowerCase(row);
         board.takeShot(column,row);
     }
     public Board getBoard() {

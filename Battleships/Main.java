@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Main {
     public Main() {
         boolean widthSet = false;
@@ -40,14 +42,43 @@ public class Main {
         Board board2 = player2.getBoard();
 
         for(int i=0;i<4;i++){
-            board1.display(1);
-            System.out.println("Please enter the column of the bottom left co-ordinate of your ship");
-            int column= Integer.parseInt(Console.readLine());
-            System.out.println("Please enter the row of the bottom left co-ordinate of your ship");
-            char row= Character.toUpperCase(Console.readLine().charAt(0));
-            System.out.println("Please enter the orientation (h/v)");
-            char orientation= Character.toUpperCase(Console.readLine().charAt(0));
-                board1.addShip(column,row,i+2, orientation);
+            boolean valid=false;
+            while(!valid) {
+                board1.display(1);
+                int column=0;
+                while(column>board1.getWidth() || column<1) {
+                    System.out.println("Please enter the column of the bottom left co-ordinate of your ship");
+                    column = Integer.parseInt(Console.readLine());
+                }
+                char row=' ';
+                while(row<97 || row>97+height-1) {
+                    System.out.println("Please enter the row of the bottom left co-ordinate of your ship");
+                    row = Character.toLowerCase(Console.readLine().charAt(0));
+                }
+                System.out.println("Please enter the orientation (h/v)");
+                char orientation = Character.toLowerCase(Console.readLine().charAt(0));
+                valid=board1.addShip(column, row, i + 2, orientation);
+                if(!valid){
+                    System.out.println("The ship could not be added in this location.");
+                }
+            }
+        }
+
+        for(int i=0;i<4;i++){
+            boolean valid=false;
+            while(!valid) {
+                Random rand=new Random();
+                int column= rand.nextInt(width)+1;
+                char row= (char) (97+ rand.nextInt(height));
+                char orientation;
+                if(rand.nextInt(2)%2==0){
+                    orientation='h';
+                }
+                else{
+                    orientation='v';
+                }
+                valid=board2.addShip(column, row, i + 2, orientation);
+            }
         }
 
         while (true) {
@@ -59,14 +90,12 @@ public class Main {
                         "Would you like to take a shot(1), look at the computer's board(2), or look at your board(3)?:");
                 String result = Console.readLine();
                 System.out.println();
-                if (result.equals("1"))
-                    makeShot = true;
-                else if (result.equals("2"))
-                    board2.display(player1.getNumber());
-                else if (result.equals("3"))
-                    board1.display(player1.getNumber());
-                else
-                    System.out.println("That is not a valid option!");
+                switch (result) {
+                    case "1" -> makeShot = true;
+                    case "2" -> board2.display(player1.getNumber());
+                    case "3" -> board1.display(player1.getNumber());
+                    default -> System.out.println("That is not a valid option!");
+                }
             }
             board2.display(player1.getNumber());
             player1.takeShot(board2);
