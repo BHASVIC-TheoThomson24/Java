@@ -19,9 +19,9 @@ public class Board {
                 case 'K': board[0][i]= new King('A',i,"White",this);
                 board[7][i]=new King('H',i,"Black", this);
                 break;
-                board[1][i]=new Pawn('P',"White",this);
-                board[6][i]=new Pawn('P',"Black",this);
             }
+            board[1][i]=new Pawn('B',i,"White",this);
+            board[6][i]=new Pawn('G',i,"Black",this);
         }
     }
     public void display(){
@@ -43,18 +43,10 @@ public class Board {
     public Piece getPiece(char row, int column){
         return board[row-65][column-1];
     }
-    public boolean movePiece(Piece piece, int row, int column){
-        if(board[row][column]==null){
-            board[row][column]=piece;
-            return true;
-        }
-        return false;
-
+    public void set(char row, int column, Piece piece){
+        board[row-65][column-1]=piece;
     }
-    public void clear(char row, int column){
-        board[(row-65)][column-1]=null;
-    }
-    public void set(int row, int column, Piece piece){
-        board[row][column]=piece;
+    public void clear(char row,int column){
+        board[row-65][column-1]=null;
     }
 }

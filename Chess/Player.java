@@ -23,7 +23,7 @@ public class Player {
             else{
                 valid = true;
                 board.getPiece(row,column).move();
-                board.clear(row, column);
+                board.clear(row,column);
             }
         }
 

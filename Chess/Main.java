@@ -17,6 +17,7 @@ public class Main {
             System.out.println();
             System.out.println("It's Black's turn to move:");
             gameOver = black.movePiece(board);
+            board.display();
         }
         board.display();
         Console.readLine();

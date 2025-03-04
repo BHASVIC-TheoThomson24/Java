@@ -1,4 +1,4 @@
-public class Piece {
+public abstract class Piece {
     char type;
     String colour;
     Board board;
@@ -9,7 +9,7 @@ public class Piece {
         this.colour = colour;
         this.board = board;
         this.row=row;
-        this.column=column;
+        this.column=column+1;
     }
 
     public char getType() {
@@ -31,17 +31,33 @@ public class Piece {
             }
             int column = 0;
             while (column < 1 || column > 8) {
-
                 System.out.println("Enter column to move to");
                 column = Integer.parseInt(Console.readLine());
             }
             valid=checkValid(row,column);
             if (valid) {
-                board.set(row, column, this);
+                this.row=row;
+                this.column=column;
+                board.set(this.row, this.column, this);
+            }
+            else{
+                System.out.println("Invalid cell selected. Please try again.");
             }
         }
     }
-    private boolean checkValid(char row, int column) {
-        boolean valid = false;
+    protected boolean checkValid(char row, int column) {
+        boolean valid = true;
+        //Cannot move to a square with one of your pieces on it
+        Piece piece=board.getPiece(row,column);
+        if(piece!=null){
+            if(piece.getColour().equals(this.colour)){
+                valid=false;
+            }
+        }
+        else if(!checkMove(row, column)){
+         valid=false;
+        }
+        return valid;
     }
+    protected abstract boolean checkMove(char row, int column);
 }

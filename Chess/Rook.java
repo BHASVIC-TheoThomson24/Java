@@ -3,4 +3,12 @@ public class Rook extends Piece {
         super(row, col, colour, board);
         type='R';
     }
+
+    protected boolean checkMove(char row, int column) {
+        boolean valid=true;
+        if(row!=this.row && column!=this.column){
+            valid=false;
+        }
+        return valid;
+    }
 }
