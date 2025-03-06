@@ -4,24 +4,24 @@ public class Board {
         String rank0="RNBQKBNR";
         for(int i=0;i<8;i++){
             switch(rank0.charAt(i)){
-                case 'R': board[0][i]=new Rook('A', i, "White", this);
-                board[7][i]=new Rook('H', i, "Black", this);
+                case 'R': board[0][i]=new Rook('A', i, Main.white, this);
+                board[7][i]=new Rook('H', i, Main.black, this);
                 break;
-                case 'B': board[0][i]=new Bishop('A',i,"White", this);
-                board[7][i]=new Bishop('H',i,"Black", this);
+                case 'B': board[0][i]=new Bishop('A',i,Main.white, this);
+                board[7][i]=new Bishop('H',i,Main.black, this);
                 break;
-                case 'N': board[0][i]=new Knight('A',i,"White", this);
-                board[7][i]=new Knight('H',i,"Black", this);
+                case 'N': board[0][i]=new Knight('A',i,Main.white, this);
+                board[7][i]=new Knight('H',i,Main.black, this);
                 break;
-                case 'Q': board[0][i]=new Queen('A',i,"White",this);
-                board[7][i]=new Queen('H',i,"Black", this);
+                case 'Q': board[0][i]=new Queen('A',i,Main.white,this);
+                board[7][i]=new Queen('H',i,Main.black, this);
                 break;
-                case 'K': board[0][i]= new King('A',i,"White",this);
-                board[7][i]=new King('H',i,"Black", this);
+                case 'K': board[0][i]= new King('A',i,Main.white,this);
+                board[7][i]=new King('H',i,Main.black, this);
                 break;
             }
-            board[1][i]=new Pawn('B',i,"White",this);
-            board[6][i]=new Pawn('G',i,"Black",this);
+            board[1][i]=new Pawn('B',i,Main.white,this);
+            board[6][i]=new Pawn('G',i,Main.black,this);
         }
     }
     public void display(){
@@ -41,7 +41,11 @@ public class Board {
         }
     }
     public Piece getPiece(char row, int column){
-        return board[row-65][column-1];
+        try{
+            return board[row-65][column-1];
+        }catch (Exception e){
+            return null;
+        }
     }
     public void set(char row, int column, Piece piece){
         board[row-65][column-1]=piece;

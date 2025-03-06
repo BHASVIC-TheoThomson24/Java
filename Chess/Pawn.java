@@ -1,7 +1,7 @@
 public class Pawn extends Piece {
     int moves=0;
-    public Pawn(char row, int col,String colour,Board board) {
-        super(row,col,colour,board);
+    public Pawn(char row, int col,Player player,Board board) {
+        super(row,col,player,board);
         type='P';
     }
     protected boolean checkMove(char row, int column){
@@ -28,7 +28,7 @@ public class Pawn extends Piece {
         }
         //Pawns cannot move through a piece
         else{
-            if(board.getPiece((char)(row+moveDirection),column)!=null){
+            if(board.getPiece((char)(this.row+moveDirection),column)!=null){
                 valid=false;
             }
         }

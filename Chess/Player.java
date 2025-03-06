@@ -1,5 +1,8 @@
+import java.util.ArrayList;
+
 public class Player {
     String colour;
+    ArrayList<Piece> pieces=new ArrayList<Piece>();
     public Player(String colour) {
         this.colour = colour;
     }
@@ -28,5 +31,20 @@ public class Player {
         }
 
         return false;
+    }
+    public String getColour() {
+        return colour;
+    }
+    public void addPiece(Piece piece) {
+        pieces.add(piece);
+    }
+    public King getKing(){
+        King king=null;
+        for(Piece piece : pieces) {
+            if(piece.getType()=='K'){
+                king= (King) piece;
+            }
+        }
+        return king;
     }
 }

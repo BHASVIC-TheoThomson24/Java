@@ -4,12 +4,14 @@ public abstract class Piece {
     Board board;
     char row=0;
     int column=0;
-
-    public Piece(char row, int column, String colour, Board board) {
-        this.colour = colour;
+    Player player;
+    public Piece(char row, int column, Player player, Board board) {
+        this.colour = player.getColour();
         this.board = board;
         this.row=row;
         this.column=column+1;
+        this.player=player;
+        player.addPiece(this);
     }
 
     public char getType() {
@@ -35,10 +37,22 @@ public abstract class Piece {
                 column = Integer.parseInt(Console.readLine());
             }
             valid=checkValid(row,column);
+            char saveSourceRow = this.row;
+            int saveSourceColumn = this.column;
+            int SaveDestinationRow = row;
+            int SaveDestinationColumn = column;
+            Piece saveDestination = board.getPiece(row,column);
             if (valid) {
                 this.row=row;
                 this.column=column;
                 board.set(this.row, this.column, this);
+                //Cannot finish a move in check, so must undo move
+                if(player.getKing().isInCheck()){
+                    valid=false;
+                    board.set(saveSourceRow,saveSourceColumn,this);
+                    board.set(row,column,saveDestination);
+                    System.out.println("Move cannot end in check, please try again");
+                }
             }
             else{
                 System.out.println("Invalid cell selected. Please try again.");

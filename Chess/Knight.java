@@ -1,20 +1,14 @@
 public class Knight extends Piece{
-    public Knight(char row, int column, String colour, Board board){
-        super(row, column, colour, board);
+    public Knight(char row, int column, Player player, Board board){
+        super(row, column, player, board);
         type='N';
     }
 
     protected boolean checkMove(char row, int column) {
         boolean valid=true;
-        int dy=row-this.row;
-        int dx=column-this.column;
-        if(dx<0){
-            dx=-dx;
-        }
-        if(dy<0){
-            dy=-dy;
-        }
-        if(dx+dy!=3){
+        int dy=Math.abs(row-this.row);
+        int dx=Math.abs(column-this.column);
+        if(dx+dy!=3 || (dx!=2 && dy!=2)){
             valid=false;
         }
         return valid;
